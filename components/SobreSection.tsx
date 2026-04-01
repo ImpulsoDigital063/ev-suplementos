@@ -39,7 +39,7 @@ export default function SobreSection() {
                 style={{ width: 320, height: 420 }}
               >
                 <Image
-                  src="/erlane.jpg"
+                  src="/erlane-sobre.jpg"
                   alt="Erlane Vasconcelos — Farmacêutica CRF 4033-TO"
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'center top' }}
