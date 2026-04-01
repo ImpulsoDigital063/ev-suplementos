@@ -1,10 +1,12 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BlogHero from '@/components/BlogHero'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Blog — Dicas e Informações sobre Soroterapia | EV Suplementos',
-  description: 'Artigos sobre soroterapia, saúde, beleza e bem-estar por Erlane Vasconcelos, farmacêutica CRF 4033-TO.',
+  description: 'Artigos sobre soroterapia, saúde, beleza e bem-estar por Erlane Vieira, farmacêutica CRF 4033-TO.',
 }
 
 const posts = [
@@ -29,6 +31,27 @@ const posts = [
     data:    '28 de março de 2026',
     imagem:  null,
   },
+  {
+    slug:    'glutationa-iv-antioxidante',
+    titulo:  'Glutationa IV: o antioxidante mais poderoso do organismo',
+    resumo:  'Conheça a glutationa, a molécula responsável por desintoxicar células, clarear a pele e combater o envelhecimento precoce.',
+    data:    '3 de abril de 2026',
+    imagem:  null,
+  },
+  {
+    slug:    'soroterapia-pele-rejuvenescimento',
+    titulo:  'Soroterapia para Pele: hidratação profunda e rejuvenescimento',
+    resumo:  'Descubra como a infusão de colágeno, biotina e vitaminas transforma a saúde da pele de dentro para fora.',
+    data:    '8 de abril de 2026',
+    imagem:  null,
+  },
+  {
+    slug:    'soroterapia-pos-treino',
+    titulo:  'Soroterapia Pós-Treino: recuperação muscular acelerada',
+    resumo:  'Atletas e praticantes de exercício já descobriram como a reposição IV encurta o tempo de recuperação e melhora a performance.',
+    data:    '14 de abril de 2026',
+    imagem:  null,
+  },
 ]
 
 export default function BlogPage() {
@@ -36,21 +59,13 @@ export default function BlogPage() {
     <>
       <Header />
 
-      <main className="pt-28 pb-24 min-h-screen" style={{ background: 'var(--rosa)' }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <BlogHero
+        titulo="Blog"
+        subtitulo="Conteúdo"
+      />
 
-          {/* Cabeçalho */}
-          <div className="section-header mb-14">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'var(--vinho-claro)' }}>
-              Conteúdo
-            </p>
-            <h1 style={{ fontFamily: 'var(--font-playfair-display)', color: 'var(--vinho)', fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 700 }}>
-              Blog
-            </h1>
-            <p style={{ color: 'var(--texto-leve)', maxWidth: '520px', margin: '0 auto' }}>
-              Dicas, ciência e informações sobre soroterapia, saúde e bem-estar.
-            </p>
-          </div>
+      <main className="pb-24 min-h-screen" style={{ background: 'var(--rosa)' }}>
+        <div className="max-w-6xl mx-auto px-6 pt-14">
 
           {/* Grid de artigos */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -60,12 +75,15 @@ export default function BlogPage() {
                 className="bg-white rounded-xl overflow-hidden shadow-md flex flex-col"
                 style={{ borderLeft: '4px solid var(--vinho-claro)' }}
               >
-                {/* Imagem placeholder */}
-                <div
-                  className="w-full flex items-center justify-center"
-                  style={{ height: '180px', background: 'linear-gradient(135deg, var(--vinho) 0%, var(--vinho-claro) 100%)' }}
-                >
-                  <span style={{ fontSize: '3rem' }}>💉</span>
+                {/* Thumbnail */}
+                <div className="relative w-full overflow-hidden" style={{ height: '180px' }}>
+                  <Image
+                    src="/logo-banner.png"
+                    alt="EV Suplementos"
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
 
                 {/* Conteúdo */}

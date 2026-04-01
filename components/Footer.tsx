@@ -22,11 +22,18 @@ export default function Footer() {
 
           {/* Col 1 — Logo + parceria */}
           <div>
-            <div
-              className="text-2xl font-bold mb-1"
-              style={{ color: 'white', fontFamily: 'var(--font-playfair-display)' }}
-            >
-              EV Suplementos
+            <div className="mb-3">
+              <Image
+                src="/logo-sem-fundo.png"
+                alt="EV Suplementos Injetáveis"
+                width={220}
+                height={42}
+                style={{
+                  objectFit: 'contain',
+                  filter: 'brightness(0) invert(1)',
+                  opacity: 0.92,
+                }}
+              />
             </div>
             <p className="text-sm leading-relaxed opacity-70 mb-4">
               Protocolos de soroterapia proprietários com atendimento domiciliar
@@ -119,7 +126,7 @@ export default function Footer() {
             </div>
             {/* Política */}
             <a
-              href="#"
+              href="/politica-de-privacidade"
               className="text-xs opacity-50 hover:opacity-80 transition-opacity underline"
             >
               Política de Privacidade
@@ -133,7 +140,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}
         >
           <span>© {new Date().getFullYear()} EV Suplementos Injetáveis. Todos os direitos reservados.</span>
-          <span>Farmacêutica Erlane — CRF 4033-TO</span>
+          <span>Farmacêutica Erlane Vieira — CRF 4033-TO</span>
         </div>
       </div>
     </footer>

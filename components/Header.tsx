@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '#sobre',         label: 'Sobre'         },
@@ -30,30 +31,40 @@ export default function Header() {
         background:    atTop && !open ? 'transparent' : 'rgba(255,255,255,0.97)',
         backdropFilter: atTop && !open ? 'none' : 'blur(12px)',
         boxShadow:     atTop && !open ? 'none' : '0 1px 24px rgba(0,0,0,0.08)',
+        height: open ? 'auto' : undefined,
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+      <div
+        className="max-w-7xl mx-auto px-4 lg:px-6 flex items-center justify-between gap-4"
+        style={{ height: open ? 'auto' : 'clamp(48px, 7vw, 60px)' }}
+      >
 
-        {/* Logo + parceria */}
-        <a href="/" className="flex flex-col leading-none gap-0.5 min-w-0">
-          <span
-            className="text-xl font-bold tracking-tight transition-colors duration-300 whitespace-nowrap"
+        {/* Logo */}
+        <a href="/" className="flex items-center min-w-0 flex-shrink-0">
+          <Image
+            src="/logo-sem-fundo.png"
+            alt="EV Suplementos Injetáveis"
+            width={252}
+            height={68}
+            priority
             style={{
-              color:      atTop && !open ? 'white' : 'var(--vinho)',
-              fontFamily: 'var(--font-playfair-display)',
+              width: 'clamp(90px, 22vw, 130px)',
+              height: 'auto',
+              filter: atTop && !open
+                ? 'brightness(0) invert(1)'
+                : 'brightness(0) sepia(1) saturate(6) hue-rotate(305deg) brightness(0.55)',
+              transition: 'filter 0.3s ease',
             }}
-          >
-            EV Suplementos
-          </span>
+          />
         </a>
 
         {/* Nav — desktop */}
-        <nav className="hidden md:flex items-center gap-7 flex-1 justify-center">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-7 flex-1 justify-center">
           {navLinks.map(({ href, label }) => (
             <a
               key={href}
               href={href}
-              className="text-sm font-medium transition-colors duration-200 hover:opacity-75 whitespace-nowrap"
+              className="text-xs lg:text-sm font-medium transition-colors duration-200 hover:opacity-75 whitespace-nowrap"
               style={{ color: atTop ? 'rgba(255,255,255,0.85)' : 'var(--texto)' }}
             >
               {label}
@@ -66,17 +77,34 @@ export default function Header() {
           href="https://wa.me/5599981140494"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-white text-sm font-semibold transition-opacity hover:opacity-90 whitespace-nowrap min-h-[44px]"
+          className="hidden md:inline-flex items-center gap-2 px-3 lg:px-5 py-2 lg:py-2.5 rounded-lg text-white text-xs lg:text-sm font-semibold transition-opacity hover:opacity-90 whitespace-nowrap min-h-[36px] lg:min-h-[44px]"
           style={{ backgroundColor: 'var(--wpp)' }}
         >
           💬 Agendar
         </a>
 
-        {/* Hambúrguer — mobile */}
+        {/* Blog + Hambúrguer — mobile */}
+        <div className="md:hidden flex items-center gap-2 flex-shrink-0">
+          <a
+            href="/blog"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-white text-xs font-semibold"
+            style={{ backgroundColor: 'var(--vinho)' }}
+          >
+            📝 Blog
+          </a>
+          <a
+            href="https://wa.me/5599981140494"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-white text-xs font-semibold"
+            style={{ backgroundColor: 'var(--wpp)' }}
+          >
+            💬 Agendar
+          </a>
         <button
           onClick={() => setOpen(!open)}
           aria-label={open ? 'Fechar menu' : 'Abrir menu'}
-          className="md:hidden flex flex-col justify-center gap-[6px] w-10 h-10 p-1.5 flex-shrink-0"
+          className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8 p-1 flex-shrink-0"
         >
           {[
             { transform: open ? 'translateY(8px) rotate(45deg)'  : 'none', hide: false },
@@ -94,6 +122,7 @@ export default function Header() {
             />
           ))}
         </button>
+        </div>
       </div>
 
       {/* Menu mobile — drawer animado */}

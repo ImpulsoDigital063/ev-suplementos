@@ -67,10 +67,17 @@ export default function Hero() {
           {/* Texto */}
           <div className="text-white mt-8 md:mt-0">
 
-            {/* Badge desktop */}
-            <motion.div {...fadeUp(0.1)} className="hidden md:block">
+            {/* Logo + Badge desktop */}
+            <motion.div {...fadeUp(0.1)} className="hidden md:flex flex-col gap-4 mb-1">
+              <Image
+                src="/logo-sem-fundo.png"
+                alt="EV Suplementos Injetáveis"
+                width={240}
+                height={46}
+                style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.88 }}
+              />
               <span
-                className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-5"
+                className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full w-fit"
                 style={{ background: 'rgba(201,168,76,0.2)', color: 'var(--dourado)', border: '1px solid rgba(201,168,76,0.3)' }}
               >
                 ✦ Farmacêutica Certificada CRF 4033-TO
