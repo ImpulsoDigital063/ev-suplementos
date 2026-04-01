@@ -41,7 +41,13 @@
       "Bash(xargs cat:*)",
       "Bash(taskkill /PID 4596 /F)",
       "Bash(git -C /c/Users/DELL log --oneline -5)",
-      "Bash(taskkill /PID 29160 /F)"
+      "Bash(taskkill /PID 29160 /F)",
+      "Bash(ls C:/Users/DELL/ev-suplementos/app/blog/[slug])",
+      "Bash(cp \"/c/Users/DELL/Downloads/WhatsApp_Image_2026-03-30_at_22.11.42-removebg-preview.png\" \"C:/Users/DELL/ev-suplementos/public/logo-sem-fundo.png\")",
+      "Bash(cp \"/c/Users/DELL/Downloads/WhatsApp Image 2026-03-30 at 22.11.42.jpeg\" \"C:/Users/DELL/ev-suplementos/public/logo-com-fundo.jpg\")",
+      "Bash(magick --version)",
+      "Bash(convert --version)",
+      "Bash(npx next:*)"
     ]
   }
 }
