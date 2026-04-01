@@ -13,14 +13,48 @@ import FAQSection           from '@/components/FAQSection'
 import CTAFinalSection      from '@/components/CTAFinalSection'
 import Footer               from '@/components/Footer'
 export default function Home() {
-  const protocolos: {
-    id: string
-    nome: string
-    icone: string
-    resultado_esperado: string
-    descricao_curta: string
-    clientes_atendidos: number
-  }[] = []
+ const protocolos = [
+  {
+    id: '1',
+    nome: 'Emagrecimento',
+    icone: '🔥',
+    resultado_esperado: 'Redução de medidas e gordura corporal',
+    descricao_curta: 'Acelere o metabolismo e elimine gordura localizada com segurança.',
+    clientes_atendidos: 120
+  },
+  {
+    id: '2',
+    nome: 'Energia & Foco',
+    icone: '⚡',
+    resultado_esperado: 'Mais disposição e clareza mental',
+    descricao_curta: 'Recupere sua energia e aumente seu foco no dia a dia.',
+    clientes_atendidos: 95
+  },
+  {
+    id: '3',
+    nome: 'Beleza - Cabelo, Pele e Unhas',
+    icone: '✨',
+    resultado_esperado: 'Mais viço, força e hidratação',
+    descricao_curta: 'Fortaleça cabelos, unhas e melhore a qualidade da pele.',
+    clientes_atendidos: 80
+  },
+  {
+    id: '4',
+    nome: 'Massa Muscular',
+    icone: '💪',
+    resultado_esperado: 'Ganho de massa e recuperação muscular',
+    descricao_curta: 'Potencialize seus resultados físicos com suporte nutricional.',
+    clientes_atendidos: 70
+  },
+  {
+    id: '5',
+    nome: 'Imunidade',
+    icone: '🛡️',
+    resultado_esperado: 'Sistema imune fortalecido',
+    descricao_curta: 'Aumente sua resistência e proteção contra doenças.',
+    clientes_atendidos: 110
+  }
+]
 
   return (
     <>
