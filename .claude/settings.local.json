@@ -40,7 +40,8 @@
       "Bash(rm -f \"/c/Users/DELL/ev-suplementos/dev.db\")",
       "Bash(xargs cat:*)",
       "Bash(taskkill /PID 4596 /F)",
-      "Bash(git -C /c/Users/DELL log --oneline -5)"
+      "Bash(git -C /c/Users/DELL log --oneline -5)",
+      "Bash(taskkill /PID 29160 /F)"
     ]
   }
 }
