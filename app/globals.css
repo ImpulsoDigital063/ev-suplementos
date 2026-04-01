@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "../styles/globals.css";
+
+/* ── Tailwind v4: expõe as CSS vars como utilidades (bg-vinho, text-dourado…) */
+@theme inline {
+  --color-vinho-esc:   var(--vinho-esc);
+  --color-vinho:       var(--vinho);
+  --color-vinho-claro: var(--vinho-claro);
+  --color-dourado:     var(--dourado);
+  --color-wpp:         var(--wpp);
+  --color-texto:       var(--texto);
+  --color-texto-leve:  var(--texto-leve);
+  --color-fundo:       var(--fundo);
+  --color-rosa:        var(--rosa);
+  --color-rosa-med:    var(--rosa-med);
+
+  --font-sans:  var(--font-dm-sans);
+  --font-serif: var(--font-playfair-display);
+}

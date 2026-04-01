@@ -1,0 +1,154 @@
+/* ────────────────────────────────────────────────────────────
+   EV Suplementos — Design Tokens & Base Styles
+   ──────────────────────────────────────────────────────────── */
+
+:root {
+  --vinho-esc:   #2C1A1D;
+  --vinho:       #6B2737;
+  --vinho-claro: #9B3F54;
+  --dourado:     #C9A84C;
+  --wpp:         #25D366;
+  --rosa:        #FDF0F4;
+  --rosa-med:    #E8C0CC;
+  --texto:       #1A1A1A;
+  --texto-leve:  #666666;
+  --fundo:       #FAFAFA;
+}
+
+/* ── Tipografia base ──────────────────────────────────────── */
+body {
+  font-family: var(--font-dm-sans), 'DM Sans', Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair-display), 'Playfair Display', Georgia, serif;
+}
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: var(--font-dm-sans), 'DM Sans', Arial, sans-serif;
+}
+
+/* ── Layout utilitário ────────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-header h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--vinho);
+  margin-bottom: 1rem;
+}
+.section-header p {
+  color: var(--texto-leve);
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Botões utilitários ───────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+  background: var(--vinho);
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.btn-primary:hover { filter: brightness(1.15); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+  background: var(--wpp);
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.btn-secondary:hover { opacity: 0.9; }
+
+.btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+  border: 2px solid white;
+  background: transparent;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.btn-tertiary:hover { background: rgba(255,255,255,0.12); }
+
+
+/* ── Keyframes ────────────────────────────────────────────── */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
