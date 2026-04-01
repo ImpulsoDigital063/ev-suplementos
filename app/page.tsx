@@ -12,13 +12,15 @@ import AvaliacaoGratuita    from '@/components/AvaliacaoGratuita'
 import FAQSection           from '@/components/FAQSection'
 import CTAFinalSection      from '@/components/CTAFinalSection'
 import Footer               from '@/components/Footer'
-import { prisma }           from '@/lib/prisma'
-
-export default async function Home() {
-  const protocolos = await prisma.protocolo.findMany({
-    where:   { ativo: true },
-    orderBy: { nome: 'asc' },
-  })
+export default function Home() {
+  const protocolos: {
+    id: string
+    nome: string
+    icone: string
+    resultado_esperado: string
+    descricao_curta: string
+    clientes_atendidos: number
+  }[] = []
 
   return (
     <>
