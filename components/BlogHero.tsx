@@ -41,7 +41,7 @@ export default function BlogHero({ titulo, subtitulo, data, mins }: Props) {
           transition={{ duration: 0.65, ease: 'easeOut' }}
         >
           <Image
-            src="/logo-sem-fundo.png"
+            src="/images/ev-logo-header.png"
             alt="EV Suplementos Injetáveis"
             width={252}
             height={68}

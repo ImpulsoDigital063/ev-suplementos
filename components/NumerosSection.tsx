@@ -13,7 +13,7 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { value: 30,   suffix: 'h',  label: 'Horas de Formação',       icon: '🎓' },
+  { value: null, text: '✓', suffix: '', label: 'Atendimento Domiciliar', icon: '🏠' },
   { value: 150,  suffix: '+',  label: 'Clientes Atendidos',       icon: '👥' },
   { value: 98,   suffix: '%',  label: 'Taxa de Satisfação',       icon: '⭐' },
   { value: null, text: 'CRF', suffix: ' 4033-TO', label: 'Certificação Ativa', icon: '🏅' },
@@ -48,11 +48,19 @@ export default function NumerosSection() {
   return (
     <section
       id="numeros"
-      className="py-20"
+      className="py-20 relative overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, var(--vinho-esc) 0%, #4A1E2A 50%, var(--vinho-esc) 100%)',
       }}
     >
+      {/* Dot grid texture */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,14 +84,15 @@ export default function NumerosSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center p-6 rounded-2xl"
               style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                backdropFilter: 'blur(8px)',
+                background: 'rgba(255,255,255,0.07)',
+                border: '1px solid rgba(201,168,76,0.2)',
+                backdropFilter: 'blur(16px)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08)',
               }}
             >
               <div className="text-3xl mb-3">{stat.icon}</div>
               <div
-                className="text-4xl font-bold mb-1"
+                className="text-4xl font-bold mb-1 glow-gold"
                 style={{
                   color: 'var(--dourado)',
                   fontFamily: 'var(--font-playfair-display)',

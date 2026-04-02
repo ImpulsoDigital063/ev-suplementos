@@ -32,7 +32,7 @@ export default function ProtocoloCard({ protocolo, index = 0 }: Props) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(107,39,55,0.18)' }}
       whileTap={{ scale: 0.98 }}
-      className="bg-white rounded-xl p-8 shadow-md w-full flex flex-col gap-4 cursor-default"
+      className="shimmer-card bg-white rounded-xl p-8 shadow-md w-full flex flex-col gap-4 cursor-default"
       style={{ borderLeft: '4px solid var(--vinho-claro)' }}
     >
       {/* Ícone */}

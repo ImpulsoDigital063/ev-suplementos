@@ -1,7 +1,10 @@
 'use client'
 
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
+
+const rotatePhrases = ['Mais Energia', 'Pele Radiante', 'Menos Gordura', 'Foco e Disposição', 'Imunidade Forte']
 
 const fadeUp = (delay: number) => ({
   initial:    { opacity: 0, y: 30 },
@@ -10,6 +13,15 @@ const fadeUp = (delay: number) => ({
 })
 
 export default function Hero() {
+  const [phraseIndex, setPhraseIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPhraseIndex(i => (i + 1) % rotatePhrases.length)
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden"
@@ -23,6 +35,15 @@ export default function Hero() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.08) 0%, transparent 60%)' }}
+      />
+
+      {/* Dot grid texture */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
       />
 
       <div className="max-w-7xl mx-auto px-6 pt-24 pb-16 md:py-24 w-full relative z-10">
@@ -67,15 +88,8 @@ export default function Hero() {
           {/* Texto */}
           <div className="text-white mt-8 md:mt-0">
 
-            {/* Logo + Badge desktop */}
+            {/* Badge desktop */}
             <motion.div {...fadeUp(0.1)} className="hidden md:flex flex-col gap-4 mb-1">
-              <Image
-                src="/logo-sem-fundo.png"
-                alt="EV Suplementos Injetáveis"
-                width={240}
-                height={46}
-                style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.88 }}
-              />
               <span
                 className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full w-fit"
                 style={{ background: 'rgba(201,168,76,0.2)', color: 'var(--dourado)', border: '1px solid rgba(201,168,76,0.3)' }}
@@ -90,25 +104,47 @@ export default function Hero() {
               className="font-bold mb-5"
             >
               Sinta o Poder de um Corpo{' '}
-              <em style={{ color: 'var(--dourado)', fontStyle: 'italic' }}>
+              <em className="glow-gold" style={{ color: 'var(--dourado)', fontStyle: 'italic' }}>
                 Verdadeiramente
               </em>{' '}
               Nutrido
             </motion.h1>
+
+            {/* Texto rotativo */}
+            <motion.div {...fadeUp(0.28)} className="flex items-center gap-3 mb-5">
+              <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                Resultados em:
+              </span>
+              <div className="relative overflow-hidden" style={{ height: '1.6rem', minWidth: 160 }}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={phraseIndex}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                    className="absolute left-0 text-sm font-bold tracking-wide glow-gold"
+                    style={{ color: 'var(--dourado)' }}
+                  >
+                    {rotatePhrases[phraseIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+            </motion.div>
 
             <motion.p
               {...fadeUp(0.35)}
               className="text-lg mb-3 max-w-lg leading-relaxed"
               style={{ color: 'rgba(255,255,255,0.78)' }}
             >
-              Protocolos de soroterapia proprietários desenvolvidos por
-              farmacêutica certificada. Resultados reais, atendimento domiciliar
-              em Palmas–TO.
+              Cada protocolo foi criado por mim, com ciência farmacêutica e
+              cuidado real. Atendo você no conforto da sua casa, aqui em
+              Palmas–TO — porque resultado de verdade começa com atenção de verdade.
             </motion.p>
 
 
             <motion.div {...fadeUp(0.5)} className="flex flex-wrap gap-3 mb-8">
-              {['IV Terapia', 'Atendimento Domiciliar', 'Palmas–TO'].map(tag => (
+              {['IV Terapia', 'Intramuscular', 'Atendimento Domiciliar', 'Palmas–TO'].map(tag => (
                 <span
                   key={tag}
                   className="text-xs px-3 py-1 rounded-full"

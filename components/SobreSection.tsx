@@ -4,12 +4,13 @@ import Image  from 'next/image'
 import { motion } from 'framer-motion'
 
 const credentials = [
-  { icon: '🎓', text: 'Graduada em Farmácia — 2023'                        },
-  { icon: '✅', text: 'CRF 4033-TO — Ativo e Regularizado'                 },
-  { icon: '🏥', text: 'RT (Responsável Técnica) — Rede Drogasil'           },
-  { icon: '📍', text: 'Filial Palmas-TO'                                    },
-  { icon: '💉', text: 'Certificada em Soroterapia — 30h (Fev/2026)'        },
-  { icon: '🏠', text: 'Atendimento Domiciliar em Palmas–TO'                 },
+  { icon: '🎓', text: 'Graduada em Farmácia — 2023'                                      },
+  { icon: '✅', text: 'CRF 4033-TO — Ativo e Regularizado'                               },
+  { icon: '🏥', text: 'RT (Responsável Técnica) — Rede Drogasil, Palmas-TO'              },
+  { icon: '💉', text: 'Certificada em Soroterapia — 30h, Fev/2026 (Imperatriz-MA)'       },
+  { icon: '📋', text: 'Habilitada: Resolução CFF nº 572/2013 (soroterapia IV)'           },
+  { icon: '📋', text: 'Habilitada: Resolução CFF nº 499/2008 (aplicação IM + domiciliar)'},
+  { icon: '🏠', text: 'Atendimento Domiciliar em Palmas–TO'                               },
 ]
 
 export default function SobreSection() {
@@ -120,6 +121,19 @@ export default function SobreSection() {
                   <span className="text-sm font-medium" style={{ color: 'var(--texto)' }}>{c.text}</span>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Box Amparo Legal */}
+            <div
+              className="rounded-xl px-5 py-4 mb-6 text-sm leading-relaxed"
+              style={{
+                background: 'var(--vinho-esc)',
+                color: 'rgba(255,255,255,0.88)',
+              }}
+            >
+              <span className="font-bold" style={{ color: 'var(--dourado)' }}>⚖️ Amparo Legal: </span>
+              Farmacêutico inscrito no CRF está legalmente habilitado para prescrever e aplicar
+              injetáveis conforme Resoluções CFF nº 572/2013 e nº 499/2008 e Lei nº 13.021/2014.
             </div>
 
             <a href="#protocolos" className="btn-primary">

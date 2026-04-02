@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <div className="mb-3">
               <Image
-                src="/logo-sem-fundo.png"
+                src="/images/ev-logo-header.png"
                 alt="EV Suplementos Injetáveis"
                 width={220}
                 height={42}
@@ -85,12 +85,6 @@ export default function Footer() {
                 <span>📱</span>
                 <a href="https://wa.me/5599981140494" className="hover:text-white hover:opacity-100 transition-colors">
                   +55 99 98114-0494
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <span>✉️</span>
-                <a href="mailto:erlane@ev-suplementos.com" className="hover:text-white hover:opacity-100 transition-colors">
-                  erlane@ev-suplementos.com
                 </a>
               </li>
               <li className="flex items-center gap-2">

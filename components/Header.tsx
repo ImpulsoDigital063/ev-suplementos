@@ -40,7 +40,7 @@ export default function Header() {
       >
 
         {/* Logo */}
-        <a href="/" className="flex items-center min-w-0 flex-shrink-0 translate-y-2 md:translate-y-0">
+        <a href="/" className="flex items-center min-w-0 flex-shrink-0">
           <Image
             src="/images/ev-logo-header.png"
             alt="EV Suplementos Injetáveis"
@@ -48,12 +48,12 @@ export default function Header() {
             height={307}
             priority
             style={{
-              height: '50px',
+              height: '80px',
               width:  'auto',
               display: 'block',
               filter: atTop && !open
                 ? 'brightness(0) invert(1)'
-                : 'none',
+                : 'brightness(0)',
               transition: 'filter 0.3s ease',
             }}
           />
@@ -85,7 +85,7 @@ export default function Header() {
         </a>
 
         {/* Blog + Hambúrguer — mobile */}
-        <div className="md:hidden flex items-center gap-2 ml-auto flex-shrink-0">
+        <div className="md:hidden flex items-center gap-2 ml-auto flex-shrink-0" style={{ marginRight: '-16px' }}>
           <a
             href="/blog"
             className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-white text-xs font-semibold"

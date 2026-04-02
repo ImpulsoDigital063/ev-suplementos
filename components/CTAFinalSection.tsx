@@ -13,6 +13,15 @@ export default function CTAFinalSection() {
         style={{ background: 'radial-gradient(ellipse at 50% 100%, rgba(201,168,76,0.1) 0%, transparent 60%)' }}
       />
 
+      {/* Dot grid texture */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+
       <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -33,7 +42,7 @@ export default function CTAFinalSection() {
           style={{ fontFamily: 'var(--font-playfair-display)' }}
         >
           Pronto para Começar sua{' '}
-          <em style={{ color: 'var(--dourado)', fontStyle: 'italic' }}>Transformação?</em>
+          <em className="glow-gold" style={{ color: 'var(--dourado)', fontStyle: 'italic' }}>Transformação?</em>
         </motion.h2>
 
         <motion.p

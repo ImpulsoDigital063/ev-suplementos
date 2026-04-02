@@ -8,6 +8,9 @@ import BeneficiosSection    from '@/components/BeneficiosSection'
 import ComoFuncionaSection  from '@/components/ComoFuncionaSection'
 import AmparoLegalSection   from '@/components/AmparoLegalSection'
 import ParceriaSTINPHARMA   from '@/components/ParceriaSTINPHARMA'
+import ResultadosSection    from '@/components/ResultadosSection'
+import InvestimentoSection  from '@/components/InvestimentoSection'
+import BlogPromoSection     from '@/components/BlogPromoSection'
 import AvaliacaoGratuita    from '@/components/AvaliacaoGratuita'
 import FAQSection           from '@/components/FAQSection'
 import CTAFinalSection      from '@/components/CTAFinalSection'
@@ -105,7 +108,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Sobre */}
+      {/* 6. Resultados */}
+      <ResultadosSection />
+
+      {/* 7. Sobre */}
       <SobreSection />
 
       {/* 7. Por que escolher */}
@@ -114,7 +120,10 @@ export default function Home() {
       {/* 7. Como Funciona */}
       <ComoFuncionaSection />
 
-{/* 9. Amparo Legal */}
+{/* 9. Investimento */}
+      <InvestimentoSection />
+
+{/* 10. Amparo Legal */}
       <AmparoLegalSection />
 
       {/* 10. Parceria STINPHARMA */}
@@ -125,6 +134,9 @@ export default function Home() {
 
       {/* 12. FAQ */}
       <FAQSection />
+
+      {/* 13. Blog promo */}
+      <BlogPromoSection />
 
       {/* 13. CTA Final */}
       <CTAFinalSection />
